@@ -1,0 +1,46 @@
+<!--Logo-->
+<div class="container">
+    <div class="row">
+        <div class="col text-center pt-5 d-none d-sm-block">
+            <a href="{{url_for('home')}}"><img src="{{url_for('static', filename='images/logo.jpg')}}" class="logo"
+                    alt="Magnet Fishing Stockholm - Logo" /></a>
+        </div>
+    </div>
+</div>
+<!--Logo for smaller devices-->
+<div class="container">
+    <div class="row">
+        <div class="col text-center pt-5 d-block d-sm-none">
+            <a href="{{url_for('home')}}"><img src="{{url_for('static', filename='images/logo.jpg')}}"
+                    class="logo-small-device" alt="Magnet Fishing Stockholm - Logo" /></a>
+        </div>
+    </div>
+</div>
+
+<!--Navigation Bar-->
+<div class="container pt-5 pb-5">
+    <nav class="navbar navbar-expand-md navbar-color">
+        <button class="navbar-toggler navbar-light mx-auto" type="button" data-toggle="collapse"
+            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mx-auto">
+                <a class="nav-item nav-link link-font pr-5" href="{{url_for('home')}}">Home<span
+                        class="sr-only">(current)</span></a>
+                {% if session.user %}
+                <a class="nav-item nav-link link-font pr-5" href="{{url_for('logout')}}">Logout</a>
+                <a class="nav-item nav-link link-font pr-5"
+                    href="{{ url_for('profile', email=session['user']) }}">Profile</a>
+                <a class="nav-item nav-link link-font pr-5" href="{{url_for('get_catches')}}">Catches</a>
+                <a class="nav-item nav-link link-font pr-5" href="{{url_for('add_catch')}}">Add Catches</a>
+                <a class="nav-item nav-link link-font" href="">Contact</a>
+                {% else %}
+                <a class="nav-item nav-link link-font pr-5" href="{{url_for('register')}}">Register</a>
+                <a class="nav-item nav-link link-font pr-5" href="{{url_for('login')}}">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</div>
