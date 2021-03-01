@@ -3,14 +3,15 @@
 /*-----BODY-----*/
 
 body {
+    background: url('/media/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 4.625rem);
 	font-family: 'Stardos Stencil', cursive;
 	font-size: 1.6rem;
 	color: rgb(0, 0, 0, 1);
 }
 
-html,
-body {
-	width: 100%;
+html{
 	height: 100%;
 }
 
@@ -33,16 +34,14 @@ body {
 	padding-left: 1rem !important;
 }
 
-
 /*-----BACKGROUND IMAGE-----*/
 
-.background {
-	/*alt tag for image???*/
-	background: url("{% static 'images/logo.jpg' %}") no-repeat center center fixed;
+/*body {
+	background: white url('images/background.jpg'); no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-}
+}*/
 
 #wrapper {
 	width: 100%;
